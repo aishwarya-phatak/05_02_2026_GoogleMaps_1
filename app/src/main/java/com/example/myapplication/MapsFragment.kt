@@ -47,16 +47,16 @@ class MapsFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
 
+
+        val sydney = LatLng(-34.0, 151.0)
+        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         initMapSettings()
         initMarkerSettings()
         addPolygon()
         addPolyline()
         setOnMarkerClickListener()
         setOnMarkerDragListener()
-
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
     override fun onCreateView(
@@ -90,8 +90,8 @@ class MapsFragment : Fragment() {
     }
 
     fun initMarkerSettings() {
-        val cameraPosition = CameraPosition(LatLng(18.5204, 73.8567), 20.0f, 0.0f, 0.0f)
-        gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
+//        val cameraPosition = CameraPosition(LatLng(18.5204, 73.8567), 20.0f, 0.0f, 0.0f)
+//        gMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
         puneMarker = gMap.addMarker(
             MarkerOptions()
